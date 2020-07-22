@@ -530,6 +530,7 @@ declare module 'react-native-gesture-handler/Swipeable' {
 
   export default class Swipeable extends React.Component<SwipeableProperties> {
     close: () => void;
+    closeInstantly: () => void;
     openLeft: () => void;
     openRight: () => void;
   }
