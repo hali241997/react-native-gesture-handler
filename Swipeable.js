@@ -263,6 +263,13 @@ export default class Swipeable extends Component<PropType, StateType> {
     this._animateRow(this._currentOffset(), 0);
   };
 
+  closeInstantly = () => {
+    const { dragX, rowTranslation } = this.state;
+    dragX.setValue(0);
+    rowTranslation.setValue(0);
+    this.setState({ rowState: Math.sign(0) });
+  };
+
   openLeft = () => {
     const { leftWidth = 0 } = this.state;
     this._animateRow(this._currentOffset(), leftWidth);
@@ -346,7 +353,7 @@ const styles = StyleSheet.create({
   },
   leftActions: {
     ...StyleSheet.absoluteFillObject,
-    flexDirection: I18nManager.isRTL? 'row-reverse': 'row',
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
   rightActions: {
     ...StyleSheet.absoluteFillObject,
