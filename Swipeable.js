@@ -155,7 +155,8 @@ export default class Swipeable extends Component<PropType, StateType> {
 
   _onTapHandlerStateChange = ({ nativeEvent }) => {
     if (nativeEvent.oldState === State.ACTIVE) {
-      this.close();
+      // this.close();
+      this.closeInstantly();
     }
   };
 
